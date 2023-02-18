@@ -15,18 +15,38 @@ import java.util.Random;
 
 public class almosafer {
 
-	LocalDate startDate = LocalDate.now().plus(Period.ofDays((new Random().nextInt(90))));
+    LocalDate startDate = LocalDate.now().plus(Period.ofDays((new Random().nextInt(90))));
     LocalDate endDate = startDate.plus(Period.ofDays((new Random().nextInt(30))));
+    Random rand = new Random();
+    int n = rand.nextInt(3);
+    int id;
+    String City;
+    
     
     @Test
-    public void City (){ 		
+    public void City (){ 	
+	    
+	    		if (n == 0) {
+    				  City = "Dammam";
+    				  id =44;
+    			}
+    			else if (n==1) {
+    				City ="Dhahran"; 
+    				id =58;
+    				
+    			}
+                        else if (n==2) {
+    				City = "Al Khobar"; 
+    				id = 50;
+    			}
+	    
     			
     	RestAssured.
         when().get("https://www.almosafer.com/api/accommodation/lookup/city?locale=en").
         then().
         assertThat().statusCode(200).
-        and().body("[0].value", is("Dammam")).
-        and().body("[0].id", is(44));
+        and().body("["+n+"]"+".value", is(City)).
+        and().body("["+n+"]"+".id", is(id));
     	    
         }
     
