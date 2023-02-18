@@ -47,7 +47,7 @@ public class almosafer {
        	.when().post("https://www.almosafer.com/api/accommodation/property/search").then()
     	.assertThat().statusCode(200).
     	and().body("pageSize", is(10)).
-    	and().body("currencyCode", is("SAR"))
+    	and().body("currencyCode", is("SAR"));
 
     }
 }
