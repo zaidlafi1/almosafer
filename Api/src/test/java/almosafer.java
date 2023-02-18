@@ -15,8 +15,8 @@ import java.util.Random;
 
 public class almosafer {
 
-    LocalDate startDate = LocalDate.now().plus(Period.ofDays((new Random().nextInt(90))));
-    LocalDate endDate = startDate.plus(Period.ofDays((new Random().nextInt(30))));
+    LocalDate Checktin = LocalDate.now().plus(Period.ofDays((new Random().nextInt(90))));
+    LocalDate Checktout = Checktin.plus(Period.ofDays((new Random().nextInt(30))));
     Random rand = new Random();
     int n = rand.nextInt(3);
     int id;
@@ -55,8 +55,8 @@ public class almosafer {
     public void chalet (){
     	String empty = "";
     	given().body("{\"searchCriteria\":[{\"lookupTypeId\":2,\"lookupId\":[44]}],"
-    			+ "\"checkIn\":\"" +startDate.toString()+"\""
-    			+ ",\"checkOut\":\"" +endDate.toString()+"\""
+    			+ "\"checkIn\":\"" + Checktin.toString()+"\""
+    			+ ",\"checkOut\":\"" + Checktout.toString()+"\""
     			+ ",\"sortBy\":\"rank\","
     			+ "\"sortOrder\":\"DESC\",\"rankType\":\"dynamic\",\"pageNo\":1,\"pageSize\":10}")
     	
