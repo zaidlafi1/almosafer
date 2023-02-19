@@ -53,7 +53,7 @@ public class almosafer {
     
     @Test
     public void chalet (){
-    	String empty = "";
+    	
     	given().body("{\"searchCriteria\":[{\"lookupTypeId\":2,\"lookupId\":[44]}],"
     			+ "\"checkIn\":\"" + Checktin.toString()+"\""
     			+ ",\"checkOut\":\"" + Checktout.toString()+"\""
